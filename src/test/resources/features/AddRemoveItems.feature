@@ -23,9 +23,10 @@ Feature: Add and Remove Items from Cart on Amazon
   Scenario: Change the language of the webpage
 
     Given User is on Home Page
+    And User clicks on the flag icon in the top menu bar
 
-    When User hovers on the flag icon in the top menu bar
-    And User clicks on Deutsch - DE
+    When User clicks on Deutsch - DE
+    And User clicks on anderungen speichern
 
     Then The text indicating the language changes from English to Deutsch
 

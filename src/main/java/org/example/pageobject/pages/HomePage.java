@@ -18,8 +18,7 @@ public class HomePage extends BasePage {
     WebElement computersCategory;
     @FindBy(xpath = "//div[@id=\"nav-belt\"]/div[3]/div/a/span")
     WebElement flagIcon;
-    @FindBy(xpath = "//span[@class=\"nav-text\"]/i")
-    WebElement germanLanguage;
+
 
     public HomePage(WebDriver webDriver) {
         super(webDriver);
@@ -37,14 +36,9 @@ public class HomePage extends BasePage {
         return new ResultsPage(webDriver);
     }
 
-    public HomePage hoverOnFlagIcon(){
-        Actions action = new Actions(webDriver);
-        action.moveToElement(flagIcon).perform();
-        return this;
-    }
-    public HomePage clickOnGerman(){
-        germanLanguage.click();
-        return this;
+    public LanguagePage clickOnFlagIcon(){
+        flagIcon.click();
+        return new LanguagePage(webDriver);
     }
 
     public HomePage waitForLanguageLabel() {

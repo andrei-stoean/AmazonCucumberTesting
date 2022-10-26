@@ -13,7 +13,6 @@ public class HomePageSteps {
     HomePage homePage = new HomePage(webDriver);
     @Given("User is on Home Page")
     public void user_is_on() {
-
         homePage.open();
     }
     @Given("User clicks on Computers and Accessories category on Home page")
@@ -38,16 +37,9 @@ public class HomePageSteps {
         Assert.assertEquals(actualCartMessage, "Added to Cart", "Added to Cart message not present");
         Assert.assertEquals(actualCartNumber, "1", "Cart number is not\"1\"");
     }
-    @When("User hovers on the flag icon in the top menu bar")
-    public void userHoversOnFlagIcon() {
-        homePage.hoverOnFlagIcon();
+    @Given("User clicks on the flag icon in the top menu bar")
+    public void userClicksOnFlagIcon() {
+        homePage.clickOnFlagIcon();
     }
-    @When("User clicks on Deutsch - DE")
-    public void user_clicks_on() {
-        homePage.clickOnGerman();
-    }
-    @Then("The text indicating the language changes from English to Deutsch")
-    public void the_text_indicating_the_language_changes_from_english() {
-        homePage.waitForLanguageLabel();
-    }
+
 }
