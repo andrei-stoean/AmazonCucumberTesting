@@ -1,4 +1,4 @@
-Feature: Test scenario for Amazon
+Feature: Add and Remove Items from Cart on Amazon
 
   Scenario: Add item in cart
 
@@ -9,6 +9,21 @@ Feature: Test scenario for Amazon
     And User clicks on Add to Cart on Product Page
 
     Then Cart number is 1 and a message "Added to Cart" must appear on Product Page
+
+  Scenario: Remove item from cart
+
+    Given User added and item in cart
+    And User clicks on Cart
+
+    When User clicks on Delete
+
+    Then Text appears "Your Amazon Cart is empty."
+    And the subtotal price is "$0.00"
+
+
+
+
+
 
 #  Scenario: Login to GitHub
 #

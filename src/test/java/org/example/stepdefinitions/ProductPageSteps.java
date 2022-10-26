@@ -1,5 +1,6 @@
 package org.example.stepdefinitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pageobject.pages.ProductPage;
@@ -18,10 +19,15 @@ public class ProductPageSteps {
 
     @Then("Cart number is {int} and a message {string} must appear on Product Page")
     public void message_must_appear_on_product_page(Integer number, String addedToCart) {
-        int expectedCartNumber = 1;
-        String expectedCartMessage = productPage.getAddToCartMessage();
+        String actualCartNumber = productPage.getCartNumber();
+        String actualCartMessage = productPage.getAddToCartMessage();
 
-        Assert.assertEquals(addedToCart, expectedCartMessage, "Added to Cart message not present");
-        Assert.assertEquals(number, expectedCartNumber, "Cart number is not\"1\"");
+        Assert.assertEquals(actualCartMessage, "Added to Cart", "Added to Cart message not present");
+        Assert.assertEquals(actualCartNumber, "1", "Cart number is not\"1\"");
+    }
+    @Given("User clicks on Cart")
+    public void user_clicks_on_cart() {
+        productPage = new ProductPage(webDriver);
+        productPage.clickOnCart();
     }
 }
