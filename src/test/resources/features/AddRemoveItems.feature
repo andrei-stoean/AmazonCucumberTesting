@@ -2,7 +2,7 @@ Feature: Add and Remove Items from Cart on Amazon
 
   Scenario: Add item in cart
 
-    Given User is on "Home Page"
+    Given User is on Home Page
     And User clicks on Computers and Accessories category on Home page
 
     When User clicks on Seagate Portable 2TB External Hard Drive on Results Page
@@ -19,6 +19,16 @@ Feature: Add and Remove Items from Cart on Amazon
 
     Then Text appears "Your Amazon Cart is empty."
     And the subtotal price is "$0.00"
+
+  Scenario: Change the language of the webpage
+
+    Given User is on Home Page
+
+    When User hovers on the flag icon in the top menu bar
+    And User clicks on Deutsch - DE
+
+    Then The text indicating the language changes from English to Deutsch
+
 
 
 

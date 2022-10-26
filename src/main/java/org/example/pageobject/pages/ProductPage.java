@@ -6,9 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ProductPage extends BasePage {
-
-    @FindBy(xpath = "//div[@id='contextualIngressPtLabel_deliveryShortLine']/span[2]")
-    WebElement country;
     @FindBy(id = "add-to-cart-button")
     WebElement addButton;
     @FindBy(xpath = "//*[@id=\"NATC_SMART_WAGON_CONF_MSG_SUCCESS\"]/span")
@@ -21,9 +18,6 @@ public class ProductPage extends BasePage {
         super(webDriver);
     }
 
-    public String findDeliverToCountry() {
-        return country.getAttribute("textContent");
-    }
 
     public ProductPage addToCart(){
         addButton.click();

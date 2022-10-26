@@ -26,17 +26,11 @@ public class CartPage extends BasePage {
         delete.click();
         return new CartPage(webDriver);
     }
-
-    public String getCartMessage() {
-        return cartMessage.getText();
-    }
-
     public CartPage waitForCartStatusText() {
         new WebDriverWait(webDriver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.textToBe(By.xpath("//div[@class=\"a-row sc-cart-header\"]/div/h1"), "Your Amazon Cart is empty."));
         return this;
     }
-
     public String getPrice() {
         return price.getText();
     }
