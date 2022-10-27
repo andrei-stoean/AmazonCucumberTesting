@@ -18,8 +18,8 @@ public class LanguagePageSteps {
     public void user_clicks_on_anderungen_speichern() {
         languagePage.clickOnSaveSettings();
     }
-    @Then("The text indicating the language changes from English to Deutsch")
-    public void the_text_indicating_the_language_changes_from_english() {
-        languagePage.waitForLanguageLabel();
+    @Then("The Hello, sign in text changes to Hallo, anmelden")
+    public void hello_sign_in_changes_to_hallo_anmelden() {
+        languagePage.waitForHelloText();
     }
 }

@@ -27,13 +27,15 @@ public class LanguagePage extends BasePage {
         saveSettings.click();
         return this;
     }
-    public LanguagePage waitForLanguageLabel() {
+    public LanguagePage waitForHelloText() {
 
-        String expectedValues[] = {"DE","Deutsch"};
-        List<String> expectedValuesList = Arrays.asList(expectedValues);
-
+//        String expectedValues[] = {"DE","Deutsch"};
+//        List<String> expectedValuesList = Arrays.asList(expectedValues);
         new WebDriverWait(webDriver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"icp-nav-flyout\"]/span/span[1]/span"), expectedValuesList.toString()));
+                .until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"nav-link-accountList-nav-line-1\"]"),"Hallo, anmelden" ));
+
+//        new WebDriverWait(webDriver, Duration.ofSeconds(5))
+//                .until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"icp-nav-flyout\"]/span/span[1]/span"), expectedValuesList.toString()));
         return this;
     }
 }
